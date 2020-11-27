@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+</head>
+
+<style>
+    * {box-sizing: border-box;}
+
+    .container {
+      padding: 16px;
+      font: 12px arial;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    .submit {
+      background-color: orange;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .submit:hover {
+      opacity:1;
+    }
+
+</style>
+
+<body>
+    <form>
+        <div class="container">
+            <h1>validation</h1>
+            <hr>
+            <label for="code"><b>Code</b></label>
+            <input type="text" placeholder="Enter Code" name="code" id="code" required>
+
+            <button type="submit" onclick="return validateform()" class="submit">submit</button>
+        </div>
+    </form>
+</body>
+
+<script type="text/javascript">
+    function validateform() {
+        code = document.getElementById("code").value;
+
+        if (code == "" ) {
+            alert("Code must be filled");
+            return false;
+        }
+
+        else if (code == "1234567") {
+            window.location = "Access Granted.html";
+            return false;
+        }
+        else{
+            alert("Code was wrong");
+        }
+    }
+  </script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+</head>
+
+<body>
+
+<style>
+     body {
+    font:12px arial;
+    color: #222;
+    text-align:center;
+    padding:35px; }
+  
+form, p, span {
+    margin:0;
+    padding:0; }
+  
+input { 
+    font:12px arial; }
+  
+a {
+    color: orange;
+    text-decoration:none; }
+  
+    a:hover { text-decoration:underline; }
+  
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:25px;
+    background: orange;
+    width:504px;
+    }
+  
+#submit { 
+    width: 60px; }
+  
+#menu { 
+    padding:12.5px 25px 12.5px 25px; }
+  
+.chat-box { 
+    float:left;
+    color: white; }
+  
+</style>
+
+<div id="wrapper">
+    <div id="menu">
+        <p class="chat-box">Chat Box<b></b></p>
+    </div>
+     
+    <div style="width: 100%; stroke: black;" id="isichat">			
+    </div>	
+
+    <form method="REQUEST" onsubmit="return kirim();">		
+        <input id="pesan" style="width: 50%" type="text" name="pesan">		
+        <button type="submit" onclick="return kirim();">KIRIM PESAN</button>	
+    </form>	
+</div>
+
+<script type="text/javascript">function kirim() 
+    {let pesan = document.getElementById("pesan").value;		
+    document.getElementById("isichat").innerHTML += pesan+"<br/>";		
+    document.getElementById("pesan").value = "";		
+    return false;}
+</script>
+
+</body>
+</html> 

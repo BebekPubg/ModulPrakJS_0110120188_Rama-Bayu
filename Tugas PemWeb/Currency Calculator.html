@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Calculator</title>
+</head>
+
+<style>
+    * {box-sizing: border-box;}
+
+    .h2 {
+      font: 15px arial;
+    }
+    .container {
+      padding: 16px;
+      font: 12px arial;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    .convert {
+      background-color: orange;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .convert:hover {
+      opacity:1;
+    }
+</style>
+
+<body>
+  <div class="h2">
+  <h2>Currency Calculator</h2>
+  </div>
+
+  <div class="container">
+  <form name="converter">
+      <label for="idr"><b>Indonesia IDR</b></label>
+      <input type="text" name="idr" onChange="idrConverter()"/>
+    
+      <label for="euro"><b>Euro</b></label>
+      <input type="text" name="euro" onChange="euroConverter()"/>
+
+      <label for="usd"><b>US Dollar</b></label>
+      <input type="text" name="dollar" onChange="dollarConverter()" />
+
+      <button type="button" value="Convert!" class="convert">Convert</button>
+  </div>
+  </form>
+</body>
+
+<script language="JavaScript">
+  function idrConverter(){
+  document.converter.dollar.value = document.converter.idr.value * 14.182
+  document.converter.euro.value = document.converter.idr.value * 16.815
+  }
+  function euroConverter(){
+  document.converter.dollar.value = document.converter.euro.value * 5,19
+  document.converter.idr.value = document.converter.euro.value * 2,83
+  }
+  function dollarConverter(){
+  document.converter.euro.value = document.converter.dollar.value * 5,19
+  document.converter.idr.value = document.converter.dollar.value * 14.182
+  }
+  </script>
+</html>
